@@ -1,0 +1,635 @@
+/* ==================================================== */
+/* 1. VARIABILI E PALETTE COLORI */
+/* ==================================================== */
+:root {
+  --bg-color: #0F0F0F;
+  --text-main: #E8E8E3;
+  --text-muted: #808080;
+  --accent-red: #D91E18;
+}
+
+/* ==================================================== */
+/* 2. RESET E IMPOSTAZIONI GLOBALI */
+/* ==================================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+}
+
+.portfolio-container {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+}
+
+/* ==================================================== */
+/* 3. HERO SECTION */
+/* ==================================================== */
+.hero-background {
+  position: absolute;
+  top: 0; 
+  left: 0; 
+  width: 100%; 
+  height: 100vh;
+  /* L'immagine resta SOLO qui */
+  background-image: url('/ramo-zen.jpg'); 
+  background-size: cover;
+  background-position: center;
+  filter: invert(100%) grayscale(80%) contrast(150%) opacity(0.2); 
+  z-index: 1;
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 2rem 5vw;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.hero-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2vh;
+}
+
+.brand-container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.nav-logo {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 1px solid rgba(232, 232, 227, 0.2);
+}
+
+.subtitle {
+  font-size: 18px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.15);
+}
+
+.minimal-nav a {
+  color: var(--text-main);
+  text-decoration: none;
+  margin-left: 2rem;
+  font-size: 18px;
+  text-transform: uppercase;
+  transition: color 0.3s;
+}
+
+.minimal-nav a:hover {
+  color: var(--accent-red);
+}
+
+.accent {
+  color: var(--accent-red);
+}
+
+.title-grid {
+  margin-top: auto;
+  margin-bottom: 10vh;
+  display: grid;
+  grid-template-columns: 1fr 300px; 
+  align-items: end;
+  gap: 2rem;
+}
+
+.giant-text {
+  font-family: 'Syne', sans-serif;
+  font-size: 15vw;
+  line-height: 0.8;
+  letter-spacing: -0.04em;
+}
+
+.outline-text {
+  color: transparent;
+  -webkit-text-stroke: 2px var(--text-main);
+}
+
+.accent-dot {
+  color: var(--accent-red);
+}
+
+.intro-text p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+  border-left: 3px solid var(--accent-red);
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+/* ==================================================== */
+/* 4. SEZIONE PROGETTI */
+/* ==================================================== */
+.projects-section {
+  padding: 10vh 5vw;
+  background-color: var(--bg-color); 
+  position: relative;
+  z-index: 5;
+}
+
+.section-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 3rem;
+  margin-bottom: 5rem;
+  color: var(--text-muted);
+}
+
+.project-card {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr); 
+  align-items: center;
+  margin-bottom: 15vh;
+}
+
+.project-info {
+  grid-column: 1 / 8;
+  grid-row: 1;
+  z-index: 2;
+  background: rgba(15, 15, 15, 0.85); 
+  padding: 2.5rem;
+  border-left: 4px solid var(--accent-red);
+  backdrop-filter: blur(8px);
+}
+
+.project-visual {
+  grid-column: 6 / 13;
+  grid-row: 1;
+  z-index: 1;
+}
+
+.project-card.reverse .project-info {
+  grid-column: 6 / 13;
+  border-left: none;
+  border-right: 4px solid var(--accent-red);
+  text-align: right;
+}
+
+.project-card.reverse .project-visual {
+  grid-column: 1 / 8;
+}
+
+.project-name {
+  font-family: 'Syne', sans-serif;
+  font-size: 3.5rem;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+}
+
+.project-name a {
+  color: var(--text-main);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+.project-name a::after {
+  content: '↗';
+  font-family: 'Inter', sans-serif;
+  font-size: 2.5rem;
+  margin-left: 10px;
+  opacity: 0;
+  transform: translate(-15px, 15px);
+  transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.project-name a:hover {
+  color: var(--accent-red);
+}
+
+.project-name a:hover::after {
+  opacity: 1;
+  transform: translate(0, 0); 
+}
+
+.project-tech {
+  color: var(--accent-red);
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.project-desc {
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+.project-visual img {
+  width: 100%;
+  height: 450px;
+  object-fit: cover;
+  filter: grayscale(100%) brightness(0.4);
+  transition: all 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.project-card:hover .project-visual img {
+  filter: grayscale(0%) brightness(1);
+  transform: scale(1.03);
+  z-index: 10;
+}
+
+/* ==================================================== */
+/* 5. SEZIONE INFO & CODICE */
+/* ==================================================== */
+.about-section {
+  padding: 10vh 5vw;
+  background-color: var(--bg-color);
+  position: relative;
+  z-index: 5;
+  border-top: 1px solid rgba(232, 232, 227, 0.1);
+}
+
+/* Rimosso l'immagine di sfondo da qui */
+
+.about-bio-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 5rem;
+  align-items: start;
+  margin-bottom: 8rem; 
+}
+
+.about-biography {
+  margin-top: 1rem;
+}
+
+.about-biography p {
+  color: var(--text-muted);
+  line-height: 1.8;
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  font-family: 'Inter', sans-serif;
+}
+
+.about-biography .bio-lead {
+  color: var(--text-main);
+  font-size: 1.6rem;
+  font-family: 'Syne', sans-serif;
+  line-height: 1.4;
+  margin-bottom: 2.5rem;
+}
+
+.portrait-container {
+  margin-top: 2rem;
+  position: relative;
+  width: 100%;
+  max-width: 320px;
+  border: 2px solid var(--text-muted);
+  padding: 10px;
+  overflow: hidden;
+  transform: rotate(-2deg);
+  transition: transform 0.4s ease;
+}
+
+.brutalist-portrait {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: grayscale(100%) contrast(130%) brightness(0.85);
+  transition: filter 0.4s ease;
+}
+
+.blood-overlay {
+  position: absolute;
+  top: 10px; 
+  left: 10px; 
+  right: 10px; 
+  bottom: 10px;
+  background-color: var(--accent-red);
+  mix-blend-mode: multiply;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.portrait-container:hover {
+  transform: rotate(0deg) scale(1.02);
+  border-color: var(--accent-red);
+}
+
+.portrait-container:hover .blood-overlay {
+  opacity: 1;
+}
+
+/* ==================================================== */
+/* 6. SEZIONE ARSENALE */
+/* ==================================================== */
+.arsenal-section {
+  padding: 5vh 5vw 15vh;
+  background-color: var(--bg-color);
+  position: relative;
+  z-index: 5;
+}
+
+.arsenal-list {
+  border-top: 2px solid rgba(232, 232, 227, 0.2);
+  display: flex;
+  flex-direction: column;
+}
+
+.arsenal-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3rem 1rem;
+  border-bottom: 2px solid rgba(232, 232, 227, 0.2);
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.arsenal-category {
+  font-family: 'Syne', sans-serif;
+  font-size: 3.5rem;
+  color: var(--text-main);
+  text-transform: uppercase;
+  transition: transform 0.4s ease, color 0.3s ease;
+}
+
+.arsenal-techs {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.1rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: var(--text-muted);
+  text-align: right;
+  transition: color 0.4s ease;
+}
+
+.arsenal-row:hover {
+  background-color: rgba(217, 30, 24, 0.03); 
+  border-bottom-color: var(--accent-red); 
+  padding-left: 3rem; 
+  padding-right: 3rem;
+}
+
+.arsenal-row:hover .arsenal-category {
+  color: var(--accent-red);
+}
+
+.arsenal-row:hover .arsenal-techs {
+  color: var(--text-main); 
+}
+
+/* ==================================================== */
+/* 7. FOOTER */
+/* ==================================================== */
+.terminal-footer {
+  padding: 15vh 5vw 5vh;
+  background-color: var(--bg-color);
+  text-align: center;
+  position: relative;
+  z-index: 5;
+}
+
+/* Rimosso l'immagine di sfondo da qui */
+
+.terminal-footer .giant-text {
+  font-size: 7.5vw; 
+  margin-bottom: 3rem;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  margin-top: 2rem;
+}
+
+.cv-button {
+  background-color: var(--accent-red);
+  color: var(--bg-color);
+  text-decoration: none;
+  font-family: 'Syne', sans-serif;
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 10px 25px;
+  border: 2px solid var(--accent-red);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transition: all 0.3s ease;
+  cursor: none; 
+}
+
+.cv-button:hover {
+  background-color: transparent;
+  color: var(--accent-red);
+}
+
+.contact-link {
+  color: var(--text-main);
+  text-decoration: none;
+  font-family: 'Syne', sans-serif;
+  font-size: 1.5rem;
+  position: relative;
+  transition: color 0.3s;
+}
+
+.contact-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background-color: var(--accent-red);
+  transition: width 0.3s ease;
+}
+
+.contact-link:hover {
+  color: var(--accent-red);
+}
+
+.contact-link:hover::after {
+  width: 100%;
+}
+
+/* ==================================================== */
+/* 8. ANIMAZIONI E UTILITIES */
+/* ==================================================== */
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(10vh); 
+  visibility: hidden;
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  will-change: opacity, visibility, transform;
+}
+
+.fade-in-section.is-visible {
+  opacity: 1;
+  transform: none; 
+  visibility: visible;
+}
+
+/* ==================================================== */
+/* 9. MEDIA QUERIES (MOBILE) */
+/* ==================================================== */
+@media (max-width: 768px) {
+  .hero-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+
+  .minimal-nav a {
+    margin-left: 0;
+    margin-right: 1.5rem;
+  }
+
+  .title-grid {
+    grid-template-columns: 1fr; 
+    gap: 2rem;
+    margin-bottom: 5vh;
+  }
+
+  .giant-text {
+    font-size: 22vw; 
+    margin-top: 10vh;
+  }
+
+  .intro-text p {
+    font-size: 1rem;
+    padding-left: 1rem;
+  }
+
+  .section-title {
+    font-size: 2.2rem;
+    margin-bottom: 3rem;
+  }
+
+  .project-card, 
+  .project-card.reverse {
+    grid-template-columns: 1fr; 
+    gap: 1rem;
+    margin-bottom: 10vh;
+  }
+
+  .project-visual, 
+  .project-card.reverse .project-visual {
+    grid-column: 1 / -1; 
+    grid-row: 1; 
+  }
+
+  .project-visual img {
+    height: 250px; 
+  }
+
+  .project-info, 
+  .project-card.reverse .project-info {
+    grid-column: 1 / -1; 
+    grid-row: 2; 
+    padding: 1.5rem 1rem;
+    border: none; 
+    border-left: 4px solid var(--accent-red); 
+    background: transparent; 
+    text-align: left; 
+  }
+
+  .project-name {
+    font-size: 2.5rem;
+  }
+
+  .about-bio-grid {
+    grid-template-columns: 1fr; 
+    gap: 3rem;
+    margin-bottom: 4rem;
+  }
+
+  .portrait-container {
+    margin: 0 auto; 
+  }
+
+  .about-biography p {
+    font-size: 1rem;
+  }
+
+  .arsenal-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 2rem 0;
+  }
+
+  .arsenal-row:hover {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .arsenal-category {
+    font-size: 2.2rem;
+  }
+
+  .arsenal-techs {
+    text-align: left;
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  .terminal-footer {
+    padding-top: 10vh;
+  }
+
+  .terminal-footer .giant-text {
+    font-size: 12vw;
+  }
+
+  .footer-links {
+    flex-direction: column; 
+    gap: 1.5rem;
+  }
+}
+
+/* ==================================================== */
+/* 10. CUSTOM CURSOR */
+/* ==================================================== */
+@media (hover: hover) and (pointer: fine) {
+  body, a, .arsenal-row {
+    cursor: none;
+  }
+
+  .custom-cursor {
+    position: fixed;
+    width: 16px;
+    height: 16px;
+    background-color: var(--accent-red);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    transition: width 0.3s cubic-bezier(0.19, 1, 0.22, 1), 
+                height 0.3s cubic-bezier(0.19, 1, 0.22, 1), 
+                background-color 0.3s ease,
+                border-radius 0.3s ease;
+    mix-blend-mode: exclusion;
+  }
+
+  .custom-cursor.hovering {
+    width: 30px;
+    height: 30px;
+    border-radius: 0; 
+    background-color: var(--accent-red);
+  }
+}
