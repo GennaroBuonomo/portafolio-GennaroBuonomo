@@ -144,7 +144,7 @@ function App() {
                 </p>
               </div>
               <div className="project-visual">
-                <img src="/Tokyo.jpg" alt="Schermata di Tokyo Explorer" />
+                <img src="/Tokyo.jpg" alt="Schermata di Tokyo Explorer" width="800" height="450"/>
               </div>
             </article>
 
@@ -160,7 +160,7 @@ function App() {
                 </p>
               </div>
               <div className="project-visual">
-                <img src="findash.jpg" alt="Schermata di FinDash" />
+                <img src="findash.jpg" alt="Schermata di FinDash" width="800" height="450" />
               </div>
             </article>
 
@@ -176,7 +176,7 @@ function App() {
                 </p>
               </div>
               <div className="project-visual">
-                <img src="/medicarepro.jpg" alt="Schermata di MediCare Pro" />
+                <img src="/medicarepro.jpg" alt="Schermata di MediCare Pro" width="800" height="450"/>
               </div>
             </article>
 
@@ -199,7 +199,9 @@ function App() {
                 <img 
                   src="/Gennaro_Buonomo_foto.jpg" 
                   alt="Gennaro Buonomo" 
-                  className="brutalist-portrait" 
+                  className="brutalist-portrait"
+                  width="300"
+                  height="400" 
                 />
                 <div className="blood-overlay"></div>
               </div>
