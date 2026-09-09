@@ -144,7 +144,7 @@ function App() {
                 </p>
               </div>
               <div className="project-visual">
-                <img src="/Tokyo.jpeg" alt="Schermata di Tokyo Explorer" />
+                <img src="/Tokyo.jpg" alt="Schermata di Tokyo Explorer" />
               </div>
             </article>
 
@@ -160,7 +160,7 @@ function App() {
                 </p>
               </div>
               <div className="project-visual">
-                <img src="findash.jpeg" alt="Schermata di FinDash" />
+                <img src="findash.jpg" alt="Schermata di FinDash" />
               </div>
             </article>
 
@@ -176,7 +176,7 @@ function App() {
                 </p>
               </div>
               <div className="project-visual">
-                <img src="/medicarepro.jpeg" alt="Schermata di MediCare Pro" />
+                <img src="/medicarepro.jpg" alt="Schermata di MediCare Pro" />
               </div>
             </article>
 
