@@ -121,14 +121,20 @@ function App() {
       </main>
 
       {/* ==================================================== */}
-      {/* 2. SEZIONE PROGETTI */}
+      {/* 2. ARCHIVIO LAVORI: IL DOJO */}
       {/* ==================================================== */}
       <FadeInSection>
         <section id="progetti" className="projects-section">
           
           <h2 className="section-title">
-            01. ARCHIVIO <span className="accent">LAVORI</span>
+            01. IL <span className="accent">DOJO</span>
           </h2>
+
+          {/* SOTTOSEZIONE 1: I PROGETTI COMPLETI */}
+          <div className="dojo-category-header">
+            <h3 className="category-title">TRAINING GROUNDS</h3>
+            <p className="category-subtitle">// Web Apps & Progetti Complessi</p>
+          </div>
 
           <div className="project-grid">
             
@@ -181,6 +187,47 @@ function App() {
             </article>
 
           </div>
+
+          {/* SOTTOSEZIONE 2: I MICRO-PROGETTI DI ALLENAMENTO */}
+          <div className="dojo-category-header jutsu-spacing">
+            <h3 className="category-title">TECNICHE / JUTSU</h3>
+            <p className="category-subtitle">// Frontend Challenges & Componenti Isolati</p>
+          </div>
+
+          <div className="jutsu-grid">
+            
+            {/* Jutsu 1: Interactive Card */}
+            <article className="jutsu-card">
+              
+              <div className="jutsu-visual">
+                <img 
+                  src="/card-form.png" 
+                  alt="Anteprima Interactive Card Form" 
+                />
+              </div>
+
+              <div className="jutsu-header">
+                <h4 className="jutsu-name">
+                  <a href="https://github.com/GennaroBuonomo/interactive-card" target="_blank" rel="noreferrer">
+                    Interactive Card Form
+                  </a>
+                </h4>
+                <p className="project-tech">React (Vite) // Pure CSS // Frontend Mentor</p>
+              </div>
+              
+              <p className="project-desc">
+                Single Page Application con Live Preview istantanea fronte/retro della carta di credito, formattazione automatica a blocchi di 4 cifre e validazione nativa dello stato senza framework esterni.
+              </p>
+
+              <div className="jutsu-footer">
+                <a href="https://github.com/GennaroBuonomo/interactive-card" target="_blank" rel="noreferrer" className="jutsu-link">
+                  CODICE_REPO <span className="accent">↗</span>
+                </a>
+              </div>
+            </article>
+
+          </div>
+
         </section>
       </FadeInSection>
 
