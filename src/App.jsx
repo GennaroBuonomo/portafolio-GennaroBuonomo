@@ -290,7 +290,7 @@ function App() {
             
             <div className="arsenal-row">
               <span className="arsenal-category">FRONT-END</span>
-              <span className="arsenal-techs">HTML // JavaScript // React (Advanced) // TypeScript // Next.js 15</span>
+              <span className="arsenal-techs">HTML // JavaScript // React // Angular // TypeScript // Next.js 15</span>
             </div>
             
             <div className="arsenal-row">
